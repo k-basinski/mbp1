@@ -26,6 +26,9 @@ Wykład | slajdy
 10 - Systematyczne przeglądy i metaanalizy | [slajdy](l09.html)
 
 
+## Laboratoria
+
+[Strona laboratoriów](https://odmina.github.io/MBP_labs/)
 
 <!-- 
 
