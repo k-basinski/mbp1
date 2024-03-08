@@ -2,7 +2,7 @@
 
 ## Semestr letni
 
-Widzimy się na wykładach we wtorki w godz. 13.15 - 14.45 (sala gdzieś w AGN, sprawdzajcie plan!)
+Widzimy się na wykładach we wtorki w godz. 13.15 - 14.45 w CBM, Audytorium B.
 
 Widzimy się na laboratoriach we wtorki w godzinach:
     - 8.00 - 9.30 gr. 3
