@@ -14,16 +14,18 @@ Widzimy się na laboratoriach we wtorki w godzinach:
 
 Wykład | slajdy
 ------ | --------
-01 - Etyka, cz.1 | [slajdy](l01.html)
-02 - Etyka, cz.2 | [slajdy](l02.html)
-03 - Skale pomiarowe | [slajdy](l03.html)
-04 - Trafność i rzetelność | [slajdy](l04.html)
-05 - Obserwacja | [slajdy](l05.html)
+1 - Etyka, cz.1 | [slajdy](01.html)
+2 - _Kolokwium 2_ |
+3 - Etyka, cz.2 | [slajdy](01.html)
+4 - Trafność | [slajdy](02.html)
+5 - Rzetelność | [slajdy](03.html)
+
+<!-- 05 - Obserwacja | [slajdy](l05.html)
 06 - Porównania międzygrupowe i sondaże | [slajdy](l06.html)
 07 - Schematy korelacyjne | [slajdy](l07.html)
 08 - Modele wielozmiennowe | [slajdy](l08.html)
 09 - Badania podłużne | [slajdy](l09.html)
-10 - Systematyczne przeglądy i metaanalizy | [slajdy](l09.html)
+10 - Systematyczne przeglądy i metaanalizy | [slajdy](l09.html) -->
 
 
 ## Laboratoria

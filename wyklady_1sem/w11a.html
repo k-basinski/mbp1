@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Małgorzata Basińska">
+  <title>Świąteczna symulacja o reniferach</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="_styles.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Świąteczna symulacja o reniferach</h1>
+  <p class="author">Małgorzata Basińska</p>
+</section>
+
+<section>
+<section id="słowem-przypomnienia" class="title-slide slide level1">
+<h1>Słowem przypomnienia</h1>
+
+</section>
+<section id="próba-i-populacja" class="slide level2">
+<h2>Próba i populacja</h2>
+<ul>
+<li><em>Populacja</em> to ogół osób, do których odnosi się dana teoria
+(np. populacja wszystkich ludzi, populacja kobiet, populacja
+niemowląt).</li>
+<li><em>Próba</em> to ta część populacji, którą objęliśmy badaniem</li>
+</ul>
+</section>
+<section id="ważne-hipoteza-zerowa-i-populacja" class="slide level2">
+<h2>WAŻNE! Hipoteza zerowa i populacja</h2>
+<ul>
+<li>Nie mamy możliwości zbadania całej populacji - badamy próbę….</li>
+<li>…ale chcemy wnioskować na temat całej populacji.</li>
+<li>To właśnie populacji dotyczy nasza hipoteza zerowa!!!</li>
+<li>I chcemy uzyskać wynik istotny statystycznie, czyli taki, który
+pozwala odrzucić hipotezę zerową.</li>
+</ul>
+</section>
+<section
+id="ale-uwaga-nawet-jeżeli-między-jakimiś-dwoma-grupami-nie-ma-żadnych-różnic-wylosujemy-próbę-poprawnie-bez-żadnego-obciążenia-to-możemy-w-badaniu-zaobserwować-różnicę-między-próbami-wylosowanymi-z-tych-grup."
+class="slide level2">
+<h2>ALE UWAGA: nawet jeżeli między jakimiś dwoma grupami nie ma żadnych
+różnic, wylosujemy próbę poprawnie, bez żadnego obciążenia, to możemy w
+badaniu zaobserwować różnicę między próbami wylosowanymi z tych
+grup.</h2>
+</section></section>
+<section>
+<section
+id="bardzo-prosty-przykład-na-to-że-nawet-jeżeli-w-populacji-nie-ma-różnic-między-grupami-możemy-w-badaniu-taką-różnicę-znaleźć"
+class="title-slide slide level1">
+<h1>Bardzo prosty przykład na to, że nawet jeżeli w populacji nie ma
+różnic między grupami, możemy w badaniu taką różnicę znaleźć</h1>
+
+</section>
+<section id="nasza-populacja" class="slide level2">
+<h2>Nasza populacja</h2>
+<p>Wyobraźcie sobie, że mamy populację 100 reniferów Świętego Mikołaja,
+w której jest 50 <strong>miziołków</strong> i 50
+<strong>buziołków</strong>. Średni czas, w jakim renifery mogą
+dostarczyć worek prezentów z Rovaniemi i Gdańska jest taki sam,
+niezależnie od odmiany (miziołki / buziołki).</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><em>UWAGA: w miejsce <strong>miziołków</strong> i
+<strong>buziołków</strong> możesz wstawić dowolne insteresujące Cię
+grupy :) w miejsce <strong>czasu dostarczenia prezentu</strong> możesz
+wstawić dowolną cechę.</em></p>
+</section>
+<section id="miziołek" class="slide level2">
+<h2>Miziołek</h2>
+<p><img data-src="img/renifer1.jpg" height="350" /></p>
+<p><small>Autor: Are G Nilsen, Licencja: <a
+href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>,
+ściągnięte z <a
+href="https://en.wikipedia.org/wiki/Reindeer#/media/File:Reinbukken_på_frisk_grønt_beite._-_panoramio.jpg">wikipedii</a></small></p>
+</section>
+<section id="buziołek" class="slide level2">
+<h2>Buziołek</h2>
+<p><img data-src="img/renifer2.jpg" height="350" /></p>
+<p><small>Autor: Ludovic Rivallain, Licencja: <a
+href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>,
+ściągnięte z <a
+href="https://en.wikipedia.org/wiki/Reindeer#/media/File:Rennes_d&#39;élevage,_mais_en_liberté,_près_de_Suomussalmi._-_panoramio.jpg">wikipedii</a></small></p>
+</section>
+<section id="rozkład-wyników---miziołki" class="slide level2">
+<h2>Rozkład wyników - miziołki</h2>
+<p><img data-src="figure/w08-miziolki-1.png" /></p>
+</section>
+<section id="rozkład-wyników---buziolki" class="slide level2">
+<h2>Rozkład wyników - buziolki</h2>
+<p><img data-src="figure/w08-buziolki-1.png" /></p>
+</section>
+<section id="podstawowe-statystyki-w-obydwu-grupach"
+class="slide level2">
+<h2>Podstawowe statystyki w obydwu grupach</h2>
+<ul>
+<li>Średnia: 15.42</li>
+<li>Odchylenie standardowe: 4.1849585</li>
+<li>Minimum: 6</li>
+<li>Maximum: 27</li>
+</ul>
+</section>
+<section id="na-ile-sposobów-możemy-wybrać-3-z-50-miziołków-buziołków"
+class="slide level2">
+<h2>Na ile sposobów możemy wybrać 3 z 50 miziołków / buziołków?</h2>
+<div>
+<p>19 600</p>
+</div>
+</section>
+<section id="jaka-będzie-średnia-dla-3-z-50-miziołków-buziołków"
+class="slide level2">
+<h2>Jaka będzie średnia dla 3 z 50 miziołków / buziołków?</h2>
+<p><img data-src="figure/w08-hist3-1.png" /></p>
+</section>
+<section id="średia-i-odchylenie-standardowe-tych-średnich"
+class="slide level2">
+<h2>Średia i odchylenie standardowe tych średnich</h2>
+<ul>
+<li>Średnia: 15.42</li>
+<li>Odchylenie standardowe: 2.3426399</li>
+</ul>
+</section>
+<section id="na-ile-sposobów-możemy-wybrać-5-z-50-miziołków-buziołków"
+class="slide level2">
+<h2>Na ile sposobów możemy wybrać 5 z 50 miziołków / buziołków?</h2>
+<div>
+<ul>
+<li class="fragment">Na 2 118 760 sposobów</li>
+</ul>
+</div>
+</section>
+<section id="jaka-będzie-średnia-dla-5-z-50-miziołków-buziołków"
+class="slide level2">
+<h2>Jaka będzie średnia dla 5 z 50 miziołków / buziołków?</h2>
+<p><img data-src="figure/w08-hist5-1.png" /></p>
+</section>
+<section id="średia-i-odchylenie-standardowe-tych-średnich-1"
+class="slide level2">
+<h2>Średia i odchylenie standardowe tych średnich</h2>
+<ul>
+<li>Średnia: 15.42</li>
+<li>Odchylenie standardowe: 1.7755279</li>
+</ul>
+</section>
+<section id="na-ile-sposobów-możemy-wybrać-7-z-50-miziołków-buziołków"
+class="slide level2">
+<h2>Na ile sposobów możemy wybrać 7 z 50 miziołków / buziołków?</h2>
+<div>
+<ul>
+<li class="fragment">Na 99 884 400 sposobów</li>
+</ul>
+</div>
+</section>
+<section id="jaka-będzie-średnia-dla-7-z-50-miziołków-buziołków"
+class="slide level2">
+<h2>Jaka będzie średnia dla 7 z 50 miziołków / buziołków?</h2>
+<p><em>Stworzenie 99 884 400 7 elementowych zbiorów wybranych z 50
+elementowego zbioru miziołków i policzenie średniej dla każdego trwało
+tak długo, że nie chciało mi się czekać…</em></p>
+</section>
+<section
+id="skupmy-się-na-badaniu-w-którym-losujemy-3-miziołki-i-3-buziołki"
+class="slide level2">
+<h2>Skupmy się na badaniu, w którym losujemy 3 miziołki i 3
+buziołki</h2>
+<p><img data-src="figure/w08-hist3-2-1.png" /></p>
+</section>
+<section
+id="jakie-jest-prawdopodobieństwo-że-w-naszym-badaniu-gdzie-n-3-wystąpi-średnia-mniejsza-od-10-albo-większa-od-20"
+class="slide level2">
+<h2>Jakie jest prawdopodobieństwo, że w naszym badaniu, gdzie n = 3
+wystąpi średnia mniejsza od 10 albo większa od 20?</h2>
+<ul>
+<li>Średnia mniejsza od 10: 0.0063265</li>
+<li>Średnia większa od 20: 0.0261735</li>
+</ul>
+</section>
+<section id="a-jakie-jest-prawdopodobieństwo-takiego-scenariusza"
+class="slide level2">
+<h2>A jakie jest prawdopodobieństwo takiego scenariusza?</h2>
+<ul>
+<li>Wylosowaliśmy trzy miziołki i uzyskaliśmy dla nich średnią mniejszą
+od 10.</li>
+<li>Wylosowaliśmy trzy buziołki i uzyskaliśmy dla nich średnią większą
+od 20.</li>
+<li>Pamiętamy, że grupy tak naprawdę się nie różnią i dla obydwu średnia
+jest równa około 15!!!!</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>0.00016558726</p>
+</section>
+<section id="a-jakie-jest-prawdopodobieństwo-takiego-scenariusza-1"
+class="slide level2">
+<h2>A jakie jest prawdopodobieństwo takiego scenariusza?</h2>
+<ul>
+<li>Wylosowaliśmy trzy miziołki i uzyskaliśmy dla nich średnią mniejszą
+od 13.</li>
+<li>Wylosowaliśmy trzy buziołki i uzyskaliśmy dla nich średnią większą
+od 17.</li>
+</ul>
+</section>
+<section id="mean-13-mean-17" class="slide level2">
+<h2>mean &lt; 13 &amp; mean &gt; 17</h2>
+<ul>
+<li>Średnia mniejsza od 13: 0.13</li>
+<li>Średnia większa od 17: 0.2222449</li>
+<li>Prawdopodobieństwo, że dla miziołków średnia &lt; 13, a dla
+buziołków &gt; 17: 0.0288918</li>
+</ul>
+</section>
+<section id="a-jakie-jest-prawdopodobieństwo-takiego-scenariusza-2"
+class="slide level2">
+<h2>A jakie jest prawdopodobieństwo takiego scenariusza?</h2>
+<ul>
+<li>Wylosowaliśmy trzy miziołki i uzyskaliśmy dla nich średnią mniejszą
+od 13,5.</li>
+<li>Wylosowaliśmy trzy buziołki i uzyskaliśmy dla nich średnią większą
+od 16,5.</li>
+</ul>
+</section>
+<section id="mean-135-mean-165" class="slide level2">
+<h2>mean &lt; 13,5 &amp; mean &gt; 16,5</h2>
+<ul>
+<li>Średnia mniejsza od 13,5: 0.2038265</li>
+<li>Średnia większa od 16,5: 0.3122959</li>
+<li>Prawdopodobieństwo, że dla miziołków średnia &lt; 13,5, a dla
+buziołków &gt; 16,5: 0.0636542</li>
+</ul>
+</section>
+<section id="ok-a-co-jeżeli-zbadaliśmy-więcej-reniferów-np.-5"
+class="slide level2">
+<h2>Ok, a co jeżeli zbadaliśmy więcej reniferów? Np. 5?</h2>
+<p>W naszym przykładzie w rzeczywistości nie ma różnic między miziołkami
+i buziołkami. Czy prawdopodobieństwo, że zaobserwujemy różnicę na
+poziomie 3 punktów będzie większe czy mniejsze, kiedy zbadamy więcej
+reniferów (5 zamiast 3)?</p>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Średnia mniejsza od 13,5: 0.139121</li>
+<li>Średnia większa od 16,5: 0.2681139</li>
+<li>Prawdopodobieństwo, że dla miziołków średnia &lt; 13,5, a dla
+buziołków &gt; 16,5: 0.0373003</li>
+</ul>
+</section>
+<section id="vs-5-reniferów-w-grupie" class="slide level2">
+<h2>3 vs 5 reniferów w grupie</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Średnie w grupach</th>
+<th>3 renifery</th>
+<th>5 reniferów</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10 i 20</td>
+<td>0.00016558726</td>
+<td>0.000002023237</td>
+</tr>
+<tr class="even">
+<td>13 i 17</td>
+<td>0.0288918</td>
+<td>0.0130105</td>
+</tr>
+<tr class="odd">
+<td>13,5 i 16,5</td>
+<td>0.0636542</td>
+<td>0.0373003</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wnioski-z-tej-prostej-symulacji" class="slide level2">
+<h2>Wnioski z tej prostej symulacji</h2>
+<ul>
+<li>Nawet jeżeli dwie grupy się nie różnią, możemy w badaniu uzyskać
+jakąś różnicę między wylosowanymi z nich próbami.</li>
+<li>Jesteśmy w stanie oszacować prawdopodobieństwo wystąpienia różnicy o
+określonej wielkości przy założeniu, że dwie grupy się nie różnią (choć
+w praktyce jest to nieco bardziej skomplikowane niż w podanym
+przykładzie).</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Im mniejsza różnica (słabsza zależność), tym większe
+prawdopodobieństwo, że ją uzyskamy w badaniu w sytuacji, w której w
+populacji nie ma różnic między grupami.</li>
+<li>Im więcej osób w naszej próbie, tym mniejsze prawdopodobieństwo, że
+zaobserwujemy różnicę <strong>określonej wielkości</strong> w sytuacji,
+w której w populacji nie ma różnic między grupami.</li>
+</ul>
+</section></section>
+<section>
+<section id="wartość-p" class="title-slide slide level1">
+<h1>Wartość <em>p</em></h1>
+
+</section>
+<section id="co-to-takiego" class="slide level2">
+<h2>Co to takiego</h2>
+<ul>
+<li>Wartość <em>p</em> (<em>p value</em>), z którą stykacie się
+analizując wyniki badań, oznacza prawdopodbieństwo z jakim obserwowany w
+badaniu wynik mógł pojawić się w sytuacji, w której dana zależność w
+populacji nie występuje (czyli w podobnej do przedstawionej w
+przykładzie z reniferami).</li>
+</ul>
+</section>
+<section id="czego-nam-nie-mówi-wartość-p" class="slide level2">
+<h2>Czego nam NIE mówi wartość p?</h2>
+<ul>
+<li>Jakie jest prawdopodobieństwo, że H0 jest prawdziwa.</li>
+<li>Jakie jest prawdopodobieństwo, że zaobserwowana różnica
+odzwierciedla “prawdziwą” różnicę dla populacji.</li>
+<li>Że wynik jest ważny / znaczący z praktycznego lub klinicznego punktu
+widzenia.</li>
+<li>Czy replikacja badania również dostarczy istotnych wyników i jakie
+jest prawdopobieństwo takiego scenariusza.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Wartość p nie mówi, jak silna jest badana zależność! Większe p nie
+oznacza silniejszego związku!</p>
+</section>
+<section
+id="nieistotny-wynik-nie-oznacza-że-zależność-którą-badamy-nie-występuje-w-populacji"
+class="slide level2">
+<h2>Nieistotny wynik nie oznacza, że zależność, którą badamy nie
+występuje w populacji!</h2>
+<ul>
+<li>Mogliśmy zrobić badanie o niewystarczającej mocy, zbadać zbyt mało
+osób.</li>
+</ul>
+</section></section>
+<section id="przebieg-rozumowania-statystycznego"
+class="title-slide slide level1">
+<h1>Przebieg rozumowania statystycznego</h1>
+
+</section>
+
+<section>
+<section id="podsumowanie" class="title-slide slide level1">
+<h1>Podsumowanie</h1>
+
+</section>
+<section id="ważny-wniosek" class="slide level2">
+<h2>Ważny wniosek</h2>
+<ul>
+<li>Jeżeli w interesującej nas populacji nie ma żadnej różnicy między
+dwoma grupami, możemy zaobserwować taką różnicę nawet w doskonale
+zaprojektowanym badaniu.</li>
+<li>Dzieje się tak dlatego, że nie badamy całej populacji, a jedynie jej
+niewielką część (próbę) i może wystąpić sytuacja, w której nawet gdy
+dana różnica w populacji nie występuje, do naszej próby trafią badani,
+którzy się różnią… bo tak wyszło.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>To, jak duże jest prawdopodobieństwo, że obserwowana przez nas
+różnica między grupami mogła pojawić się w sytuacji, w której w
+populacji nie ma różnic, określa <em>wartość p</em>.</li>
+</ul>
+</section>
+<section
+id="praktyczne-pytania-które-odbiorca-badania-powinien-sobie-zadać"
+class="slide level2">
+<h2>Praktyczne pytania, które odbiorca badania powinien sobie zadać</h2>
+<ul>
+<li>Jaki jest poziom istotności statystycznej uzyskanych wyników? Czy
+dla Ciebie, jako odbiorcy badania jest satysfakcjonujący?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/search/search.js"></script>
+  <script src="reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

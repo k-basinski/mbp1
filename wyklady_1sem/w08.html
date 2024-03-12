@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Małgorzata Basińska">
+  <title>Prawdopodobieństwo i losowość. Dlaczego tak trudno przewidywać zachowanie?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="_styles.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Prawdopodobieństwo i losowość. Dlaczego tak trudno
+przewidywać zachowanie?</h1>
+  <p class="author">Małgorzata Basińska</p>
+</section>
+
+<section>
+<section id="losowość-jako-brak-wzoru-i-losowość-jako-proces"
+class="title-slide slide level1">
+<h1>Losowość jako brak wzoru i losowość jako proces</h1>
+
+</section>
+<section id="rzucamy-kostką-10-razy" class="slide level2">
+<h2>Rzucamy kostką 10 razy!</h2>
+<pre><code>[1] 4 4 6 1 5 3 4 6 6 3 
+[1] 3 5 5 6 5 2 6 6 5 2
+[1] 4 1 3 2 3 6 5 2 1 3
+[1] 6 1 2 3 2 3 2 6 6 5
+[1] 4 5 2 2 6 1 5 4 5 3
+[1] 4 1 2 2 2 6 6 5 4 2
+[1] 4 4 4 4 4 1 3 8 7 9    </code></pre>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="https://imgs.xkcd.com/comics/random_number.png" /></p>
+<p><small><a href="https://xkcd.com/221/">xkcd.com</a>, <a
+href="https://creativecommons.org/licenses/by-nc/2.5/">CC-BY-NC
+2.5</a></small></p>
+</section></section>
+<section>
+<section id="skąd-się-bierze-losowość" class="title-slide slide level1">
+<h1>Skąd się bierze losowość?</h1>
+
+</section>
+<section id="losowy-to" class="slide level2">
+<h2>Losowy to:</h2>
+<ul>
+<li>taki, którego nie jesteśmy w stanie przewidzieć;</li>
+<li>taki, o którym nie wiemy, dlaczego wystąpił.</li>
+</ul>
+</section>
+<section id="źródła-losowości" class="slide level2">
+<h2>Źródła losowości</h2>
+<ul>
+<li>Nie jesteśmy w stanie kontrolować wszystkich istotnych dla danego
+zjawiska zmiennych i dlatego wydaje nam się nieprzewidywalne.</li>
+<li>Dynamiczne systemy są wrażliwe na bardzo niewielkie
+perturbacje.</li>
+</ul>
+</section>
+<section id="czy-słyszeliście-kiedyś-o-efekcie-motyla"
+class="slide level2">
+<h2>Czy słyszeliście kiedyś o efekcie motyla?</h2>
+<ul>
+<li>“Predictability: Does the Flap of a Butterfly’s Wings in Brazil Set
+Off a Tornado in Texas?” Edward Norton Lorenz, 1972.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Kiedy w 1961 roku E. N. Lorenz powtarzał jedną ze swoich symulacji,
+rozpoczął ją od połowy, wprowadzając wartości podane na wydruku.</li>
+<li>Wyniki symulacji prowadzonej od połowy były całkowicie różne od
+sytuacji, w której symulacja była prowadzona od początku.</li>
+<li>Różnice wynikały z tego, że wprowadzone na podstawie wydruku liczby
+miały dokładność to 3 miejsc po przecinku, a w pamięci komputera
+przechowywane są z większą dokładnością, przy wprowadzaniu
+utraconą.</li>
+</ul>
+<p><small>Gleick, J. (2011). Chaos. Open Road Media.</small></p>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Minimalne różnice w warunkach początkowych mogą mieć katastrofalne
+(czytaj: duże i spektakularne) rezultaty.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p><a href="https://www.youtube.com/watch?v=Lx8gMBJBlP8">Lorentzian
+waterwheel</a></p>
+</section></section>
+<section>
+<section id="sposoby-rozumienia-prawdopodobieństwa"
+class="title-slide slide level1">
+<h1>Sposoby rozumienia prawdopodobieństwa</h1>
+
+</section>
+<section id="prosty-przykład" class="slide level2">
+<h2>Prosty przykład</h2>
+<p>Wyrzucenie parzystej liczby oczek w rzucie kostką.</p>
+</section>
+<section id="interpretacje" class="slide level2">
+<h2>Interpretacje</h2>
+<ul>
+<li>klasyczna</li>
+<li>dotycząca predyspozycji</li>
+<li>subiektywistyczna</li>
+<li>dowodowa</li>
+<li>frekwencyjna</li>
+</ul>
+</section></section>
+<section>
+<section id="zmienne-mają-swoje-rozkłady"
+class="title-slide slide level1">
+<h1>Zmienne mają swoje rozkłady</h1>
+
+</section>
+<section id="wzrost-w-populacji---czteroletnie-chyba-dziewczynki"
+class="slide level2">
+<h2>Wzrost w populacji - czteroletnie (chyba) dziewczynki</h2>
+<p><img data-src="img/wzrost_kobiety.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="skąd-się-biorą-takie-rozkłady-1" class="slide level2">
+<h2>Skąd się biorą takie rozkłady (1)</h2>
+<p><img data-src="img/zylion_rzutow.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="skąd-się-biorą-takie-rozkłady-2" class="slide level2">
+<h2>Skąd się biorą takie rozkłady (2)</h2>
+<p><img data-src="img/zylion_rzutow2.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="skąd-się-biorą-takie-rozkłady-3" class="slide level2">
+<h2>Skąd się biorą takie rozkłady (3)</h2>
+<p><img data-src="img/zylion_rzutow3.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="rozkład-normalny-można-opisać-przy-pomocy-dwóch-wartości"
+class="slide level2">
+<h2>Rozkład normalny można opisać przy pomocy dwóch wartości</h2>
+<ul>
+<li>średnia</li>
+<li>odchylenie standardowe</li>
+</ul>
+</section>
+<section
+id="wzrost-w-populacji---różniące-się-średnie-i-odchylenia-standardowe"
+class="slide level2">
+<h2>Wzrost w populacji - różniące się średnie i odchylenia
+standardowe</h2>
+<p><img data-src="img/different_means_sds.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="uwagi" class="slide level2">
+<h2>Uwagi</h2>
+<ul>
+<li>Nie wszystkie zmienne będą miały rozkład normalny!</li>
+<li>Jednak o każdej zmiennej możecie myśleć jako o posiadającej jakiś
+rozkład, który ma swoją WARTOŚĆ OCZEKIWANĄ oraz ma jakąś MIARĘ
+ROZPROSZENIA.</li>
+</ul>
+</section></section>
+<section>
+<section
+id="dlaczego-zawsze-musicie-myśleć-o-zmiennej-pamiętając-o-jej-rozkładzie"
+class="title-slide slide level1">
+<h1>Dlaczego zawsze musicie myśleć o zmiennej pamiętając o jej
+rozkładzie?</h1>
+
+</section>
+<section id="weźmy-na-warsztat-taki-prawie-cytat" class="slide level2">
+<h2>Weźmy na warsztat taki <em>prawie</em> cytat</h2>
+<blockquote>
+<p>Ten ostatni czynnik [tu wstawiamy nazwę czynnika], w sposób
+najbardziej spektakularny wykazuje różnice międzypłciowe na korzyść
+[wybieramy: mężczyzn vs kobiet albo jedną z dwóch innych grup].</p>
+</blockquote>
+</section>
+<section id="albo-taki" class="slide level2">
+<h2>Albo taki</h2>
+<blockquote>
+<p>W grupie 46 dorosłych uczestników o silnych przekonaniach
+politycznych osoby o wymiernie niższej fizycznej wrażliwości na nagłe
+hałasy i zagrażające obrazy były bardziej skłonne wspierać pomoc
+zagraniczną, liberalną politykę migracyjną, pacyfizm, kontrolę dostępu
+do broni, podczas gdy osoby wykazujące się wymiernie silniejszymi
+reakcjami na te same bodźce były bardziej skłonne popierać wydatki na
+obronność, karę śmierci, patriotyzm i wojnę w Iraku.</p>
+</blockquote>
+<p><small>Oxley, D. R., Smith, K. B., Alford, J. R., Hibbing, M. V.,
+Miller, J. L., Scalora, M., Hatemi, P. K., &amp; Hibbing, J. R. (2008).
+Political Attitudes Vary with Physiological Traits. Science, 321(5896),
+1667–1670. https://doi.org/10.1126/science.1157627 </small></p>
+</section>
+<section
+id="widząc-opisy-akcentujące-różnice-miedzy-grupami-mamy-skłonność-do"
+class="slide level2">
+<h2>Widząc opisy akcentujące różnice miedzy grupami mamy skłonność
+do:</h2>
+<ul>
+<li>podkreślania tych różnic;</li>
+<li>zapominania o tym, że w obydwu grupach wyniki mają pewien rozkład,
+który oprócz tendencji centralnej ma również rozproszenie.</li>
+<li>Innymi słowy do podkreślania wariancji międzygrupowej (czyli
+zróżnicowania między grupami, zapominając jednocześnie o wariancji
+wewnątrzgrupowej (czyli zróżnicowaniu wewnątrz grupy).</li>
+</ul>
+</section>
+<section id="w-psychologii-nie-spotykacie-się-z-taką-sytuacją"
+class="slide level2">
+<h2>W psychologii NIE spotykacie się z taką sytuacją</h2>
+<p><img data-src="img/different_means_sds_NO.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="ale-z-taką-sytuacją" class="slide level2">
+<h2>…ale z taką sytuacją</h2>
+<p><img data-src="img/different_means_sds_small_difference.png" id="id"
+class="class" height="400" /></p>
+</section>
+<section id="albo-z-taką-sytuacją" class="slide level2">
+<h2>…albo z taką sytuacją</h2>
+<p><img data-src="img/different_means_sds_very_small_difference.png"
+id="id" class="class" height="400" /></p>
+</section></section>
+<section>
+<section id="jak-obrazować-zależności-między-zmiennymi"
+class="title-slide slide level1">
+<h1>Jak obrazować zależności między zmiennymi</h1>
+
+</section>
+<section id="użyteczne-narzędzie" class="slide level2">
+<h2>Użyteczne narzędzie</h2>
+<p><img data-src="img/causal_diagram1.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="nie-wiemy-o-niektórych-predyktorach" class="slide level2">
+<h2>Nie wiemy o niektórych predyktorach!</h2>
+<p><img data-src="img/causal_diagram2.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="a-predyktory-też-mogą-być-ze-sobą-powiązane"
+class="slide level2">
+<h2>A predyktory też mogą być ze sobą powiązane!</h2>
+<p><img data-src="img/causal_diagram3.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section
+id="przykład-takiego-diagramu-stosowanego-w-genetyce-zachowania"
+class="slide level2">
+<h2>Przykład takiego diagramu stosowanego w genetyce zachowania</h2>
+<p><a
+href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(00)01853-2">link</a></p>
+</section></section>
+<section>
+<section id="wskaźniki-bazowe-i-reguła-bayesa"
+class="title-slide slide level1">
+<h1>Wskaźniki bazowe i reguła Bayesa</h1>
+
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><img data-src="img/gates.png" id="id" class="class"
+height="400" /></p>
+</section>
+<section id="otwieramy-kwestionariusz-1" class="slide level2">
+<h2>OTWIERAMY KWESTIONARIUSZ 1</h2>
+<p><a
+href="https://szkolenia.gumed.edu.pl/mod/questionnaire/view.php?id=81665">https://szkolenia.gumed.edu.pl/mod/questionnaire/view.php?id=81665</a></p>
+</section>
+<section id="reguła-bayesa" class="slide level2">
+<h2>REGUŁA BAYESA</h2>
+<p><span class="math display">\[P(A|B) = \frac{P(B|A) \times
+P(A)}{P(B)}\]</span></p>
+</section>
+<section id="reguła-bayesa-i-taksówki" class="slide level2">
+<h2>REGUŁA BAYESA I TAKSÓWKI</h2>
+<p><span class="math display">\[P(jest N|obs. N) = \frac{P(obs. N|jest
+N) \times P(jest N)}{P(obs. N)}\]</span></p>
+</section>
+<section id="reguła-bayesa-i-testy-diagnostyczne" class="slide level2">
+<h2>REGUŁA BAYESA I TESTY DIAGNOSTYCZNE</h2>
+<p><span class="math display">\[P(choroba|test_{+}) =
+\frac{P(test_{+}|choroba) \times P(choroba)}{P(test_{+})}\]</span></p>
+</section>
+<section id="otwieramy-kwestionariusz-2" class="slide level2">
+<h2>OTWIERAMY KWESTIONARIUSZ 2</h2>
+<p><a
+href="https://szkolenia.gumed.edu.pl/mod/questionnaire/view.php?id=81665">https://szkolenia.gumed.edu.pl/mod/questionnaire/view.php?id=81665</a></p>
+</section>
+<section id="reguła-bayesa-i-hipotezy" class="slide level2">
+<h2>REGUŁA BAYESA I HIPOTEZY</h2>
+<p><span class="math display">\[P(hipoteza|dane) =
+\frac{P(dane|hipoteza) \times P(hipoteza)}{P(dane)}\]</span></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/search/search.js"></script>
+  <script src="reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Małgorzata Basińska">
+  <title>Testowanie hipotez i istotność statystyczna</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="_styles.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Testowanie hipotez i istotność statystyczna</h1>
+  <p class="author">Małgorzata Basińska</p>
+</section>
+
+<section>
+<section id="istota-istotności-statycznej"
+class="title-slide slide level1">
+<h1>Istota istotności statycznej</h1>
+
+</section>
+<section
+id="jak-myślicie-czy-jeżeli-między-jakimiś-dwoma-populacjami-nie-ma-żadnych-różnic-wylosujemy-próbę-poprawnie-bez-żadnego-bias-to-możemy-w-badaniu-zaobserwować-różnicę-między-próbami-wylosowanymi-z-tych-populacji"
+class="slide level2">
+<h2>Jak myślicie, czy jeżeli między jakimiś dwoma populacjami nie ma
+żadnych różnic, wylosujemy próbę poprawnie, bez żadnego bias, to możemy
+w badaniu zaobserwować różnicę między próbami wylosowanymi z tych
+populacji?</h2>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/sampling.png" /></p>
+<p><small>Źródło: Herzog, M. H., Francis, G., &amp; Clarke, A. (2019).
+Understanding Statistics and Experimental Design: How to Not Lie with
+Statistics. Springer International Publishing.
+https://doi.org/10.1007/978-3-030-03499-3. Fragment wycięty z ryc. 3.3,
+str. 29. Licencja CC BY-NC 4.0 (<a
+href="https://creativecommons.org/licenses/by-nc/4.0/">link</a>)
+</small></p>
+</section>
+<section
+id="kosekwencje-badania-tylko-niewielkiego-wycinka-populacji-próby"
+class="slide level2">
+<h2>Kosekwencje badania tylko niewielkiego wycinka populacji
+(próby)</h2>
+<ul>
+<li>Jeżeli w interesującej nas populacji nie ma żadnej różnicy między
+dwoma grupami, możemy zaobserwować taką różnicę nawet w doskonale
+zaprojektowanym badaniu.</li>
+<li>Dzieje się tak ze dlatego, że nie badamy całej populacji, a jedynie
+jej niewielką część (próbę) i może wystąpić sytuacja, w której nawet gdy
+dana różnica w populacji nie występuje, do naszej próby trafią badani,
+którzy się różnią… bo tak wyszło.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><em>Wartość p</em> określa jak duże jest prawdopodobieństwo, że
+obserwowana przez nas różnica mogła pojawić się w sytuacji, w której w
+populacji nie ma różnic między grupami.</li>
+</ul>
+</section>
+<section id="jeżeli-otrzymaliśmy-p-005" class="slide level2">
+<h2>Jeżeli otrzymaliśmy p = 0,05</h2>
+<p>Oznacza to, że gdyby interesująca nas <em>zależność</em> nie istniała
+w populacji, to prawdopoodbieństwo uzyskania w badaniu zależności tak
+samo silnej lub silniejszej wynosiłoby 0,05.</p>
+</section>
+<section id="jeżeli-otrzymaliśmy-p-001" class="slide level2">
+<h2>Jeżeli otrzymaliśmy p = 0,01</h2>
+<p>Oznacza to, że gdyby interesująca nas <em>zależność</em> nie istniała
+w populacji, to prawdopoodbieństwo uzyskania w badaniu zależności tak
+samo silnej lub silniejszej wynosiłoby 0,01.</p>
+</section></section>
+<section>
+<section id="hipoteza-zerowa" class="title-slide slide level1">
+<h1>Hipoteza zerowa</h1>
+
+</section>
+<section id="co-to-jest-hipoteza-zerowa" class="slide level2">
+<h2>Co to jest hipoteza zerowa</h2>
+<ul>
+<li><em>Hipoteza zerowa</em> zakłada zaprzeczenie testowanej przez nas
+teorii.</li>
+<li><em>Hipoteza zerowa</em> często mówi o braku zależności między
+zmiennymi, braku różnic między grupami itp.</li>
+<li>W praktyce często zakłada, że wartość testowanej statystyki nie jest
+różna od 0.</li>
+</ul>
+</section>
+<section id="hipoteza-alternatywna" class="slide level2">
+<h2>Hipoteza alternatywna</h2>
+<div>
+<ul>
+<li class="fragment"><em>Hipoteza alternatywna</em> to po prostu
+hipoteza, którą przyjęliśmy w naszym badaniu.</li>
+<li class="fragment">O czym zwykle mówią hipotezy przyjmowane w
+badaniach?</li>
+<li class="fragment">O związku, zależności między zmiennymi.</li>
+<li class="fragment">Przyjmujemy hipotezę alterantwną, gdy odrzucimy
+hipotezę zerową.</li>
+<li class="fragment">Hipoteza zerowa to <em>zaprzeczenie</em> hipotezy
+alternatywnej i na odwrót: hipoteza alternatywna to zaprzeczenie
+hipotezy zerowej.</li>
+</ul>
+</div>
+</section>
+<section
+id="jaki-jest-bardzo-prosty-wniosek-z-tego-że-h_0-to-zaprzeczenie-h_1"
+class="slide level2">
+<h2>Jaki jest bardzo prosty wniosek z tego, że <span
+class="math inline">\(H_0\)</span> to zaprzeczenie <span
+class="math inline">\(H_1\)</span>?</h2>
+<div>
+<ul>
+<li class="fragment">Nie mogą być prawdziwe jednocześnie!!!</li>
+</ul>
+</div>
+</section>
+<section id="po-co-przyjmujemy-hipotezę-zerową" class="slide level2">
+<h2>Po co przyjmujemy hipotezę zerową</h2>
+<ul>
+<li>Badamy nie całą populację, a próbę.</li>
+<li>Musimy odnieść wyniki naszego badania do populacji.</li>
+<li>Nie wiemy, czy w całej populacji występują takie same zależności,
+jak w naszej próbie…</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Możemy natomiast określić, z jakim prawdopodobieństwem moglibyśmy
+uzyskać taki wynik, jaki uzyskaliśmy, w warunkach, w których w
+rzeczywistości nie istniałaby interesująca nas zależność, a zatem w
+sytuacji, gdy hipoteza zerowa byłaby prawdziwa.</li>
+</ul>
+</section>
+<section id="spróbujcie-postawić-hipotezy-zerowe-h_0"
+class="slide level2">
+<h2>Spróbujcie postawić hipotezy zerowe (<span
+class="math inline">\(H_0\)</span>)</h2>
+<ul>
+<li><span class="math inline">\(H_1\)</span>: w sytuacji
+eksperymentalnej kobiety i mężczyźni różnią się pod względem tego, jak
+często podejmują zachowania ryzykowne</li>
+<li><span class="math inline">\(H_1\)</span>: jeżeli wieczorem wypijemy
+kawę średni czas, jaki mija od położenia się do łóżka do zaśnięcia jest
+dłuższy, niż wtedy, gdy nie piliśmy kawy</li>
+<li><span class="math inline">\(H_1\)</span>: zasób słownika (liczba
+słów, które znamy) jest skorelowany z wiekiem</li>
+</ul>
+</section>
+<section id="oto-one" class="slide level2">
+<h2>Oto one</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: w sytuacji
+eksperymentalnej kobiety i mężczyźni nie różnią się pod względem tego,
+jak często podejmują zachowania ryzykowne</li>
+<li><span class="math inline">\(H_0\)</span>: nie ma różnicy w średnim
+czasie, jaki mija od położenia się do łóżka do zaśnięcia w sytuacji, gdy
+wieczorem wypiliśmy kawę albo gdy nie wypiliśmy kawy</li>
+<li><span class="math inline">\(H_0\)</span>: zasób słownika (liczba
+słów, które znamy) nie jest skorelowany z wiekiem</li>
+</ul>
+</section></section>
+<section>
+<section id="błąd-i-i-ii-rodzaju" class="title-slide slide level1">
+<h1>Błąd I i II rodzaju</h1>
+
+</section>
+<section id="jakie-błędy-możemy-popełnić-testując-h_0"
+class="slide level2">
+<h2>Jakie błędy możemy popełnić testując <span
+class="math inline">\(H_0\)</span>?</h2>
+<div>
+<ul>
+<li class="fragment">Możemy odrzucić hipotezę zerową w sytuacji, gdy
+jest ona prawdziwa</li>
+<li class="fragment">Możemy przyjąć hipotezę zerową w sytuacji, gdy jest
+ona fałszywa</li>
+</ul>
+</div>
+</section>
+<section id="błąd-i-i-ii-rodzaju-1" class="slide level2">
+<h2>Błąd I i II rodzaju</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;"><span class="math inline">\(H_0\)</span>
+jest fałszywa</th>
+<th style="text-align: center;"><span class="math inline">\(H_0\)</span>
+jest prawdziwa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Odrzucenie <span
+class="math inline">\(H_0\)</span></td>
+<td style="text-align: center;">:)</td>
+<td style="text-align: center;">Błąd I rodzaju</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Przyjęcie <span
+class="math inline">\(H_0\)</span></td>
+<td style="text-align: center;">Błąd II rodzaju</td>
+<td style="text-align: center;">:)</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="istotność-statystyczna-i-błąd-i-rodzaju"
+class="title-slide slide level1">
+<h1>Istotność statystyczna i błąd I rodzaju</h1>
+
+</section>
+<section id="co-to-znaczy-że-wynik-jest-istotny-statystycznie"
+class="slide level2">
+<h2>Co to znaczy, że wynik jest istotny statystycznie?</h2>
+<ul>
+<li>Wynik istotny statystycznie to taki, którego pojawienie się w
+sytuacji gdy <span class="math inline">\(H_0\)</span> jest prawdziwa
+jest mało prawdopodobne.</li>
+</ul>
+</section>
+<section id="co-to-znaczy-mało-prawdopodobne" class="slide level2">
+<h2>Co to znaczy “mało prawdopodobne”?</h2>
+<div>
+<ul>
+<li class="fragment">Na to pytanie odpowiadamy określając <em>poziom
+istotności</em></li>
+</ul>
+</div>
+</section>
+<section id="poziom-istotności" class="slide level2">
+<h2>Poziom istotności</h2>
+<ul>
+<li>Wynik istotny statystycznie to taki, dla kórego prawdopodobieństwo
+pojawienia się w sytuacji, gdy <span class="math inline">\(H_0\)</span>
+jest prawdziwa jest mniejsze od określonego wcześniej <em>poziomu
+istotności</em>.</li>
+<li><em>Poziom istotności</em> oznaczamy zwykle grecką literą <span
+class="math inline">\(\alpha\)</span>.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>W psychologii zwykle <span class="math inline">\(\alpha =
+0.05\)</span></li>
+<li>Jeżeli <span class="math inline">\(p &lt; \alpha\)</span> mówimy, że
+wynik jest istotny statystycznie i odrzucamy <span
+class="math inline">\(H_0\)</span></li>
+</ul>
+</section>
+<section id="istotność-statystyczna-a-błąd-i-rodzaju"
+class="slide level2">
+<h2>Istotność statystyczna a błąd I rodzaju</h2>
+<ul>
+<li>Poziom istotności statystycznej to prawdopodobieństwo odrzucenia
+hipotezy zerowej W SYTUACJI, GDY JEST ONA PRAWDZIWA…</li>
+<li>…a zatem prawdopodobieństwo popełnienia błędu I rodzaju.</li>
+</ul>
+</section>
+<section
+id="dlaczego-wymagany-poziom-istotności-statystycznej-powinniśmy-określić-zanim-rozpoczniemy-badania"
+class="slide level2">
+<h2>Dlaczego wymagany poziom istotności statystycznej powinniśmy
+określić ZANIM rozpoczniemy badania?</h2>
+</section>
+<section id="mamy-wynik-istotny-statystycznie---co-to-dla-nas-oznacza"
+class="slide level2">
+<h2>Mamy wynik istotny statystycznie - co to dla nas oznacza?</h2>
+<div>
+<ul>
+<li class="fragment">Jest mało prawdopodobne (na poziomie &lt; <span
+class="math inline">\(\alpha\)</span>), by pojawił się w sytuacji, gdy w
+populacji nie ma zależności pomiędzy interesującymi nas zmiennymi.</li>
+<li class="fragment">Skoro jest to mało prawdopodobne, odrzucamy <span
+class="math inline">\(H_0\)</span> i przyjmujemy <span
+class="math inline">\(H_1\)</span></li>
+</ul>
+</div>
+</section>
+<section
+id="mamy-wynik-istotny-statystycznie---jakie-pozostają-niewiadome"
+class="slide level2">
+<h2>Mamy wynik istotny statystycznie - jakie pozostają niewiadome</h2>
+<ul>
+<li>Czy wynik ma zanczenie praktyczne (zagadnienie wielkości
+efektu)</li>
+<li>Czy wynik, który uzyskaliśmy, jest rzeczywiście miarą tego, co
+chcieliśmy zmierzyć i możemy interpretować go tak, jak zakładaliśmy
+(zagadnienie trafności)</li>
+<li>Czy wynik zostanie zreplikowany</li>
+</ul>
+</section>
+<section id="mamy-wynik-istotny-statystycznie---czego-to-nie-oznacza"
+class="slide level2">
+<h2>Mamy wynik istotny statystycznie - czego to NIE oznacza?</h2>
+<ul>
+<li>Że hipoteza zerowa jest fałszywa</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p style="color:red">
+Prawdopodobieństwo odrzucenia hipotezy zerowej, gdy jest prawdziwa to
+NIE to samo, co prawdopodobieństwo, że hipoteza zerowa jest prawdziwa.
+</p></li>
+<li><p style="color:red">
+Wartość p NIE określa prawdopodobieństwa tego, że hipoteza zerowa jest
+prawdziwa.
+</p>
+<small>
+<p style="color:green">
+Hipoteza zerowa odnosi się do populacji i w związku z tym nie wiemy, czy
+jest prawdziwa, czy fałszywa (chyba, że zbadamy całą populację).
+Testujemy ją pośrednio, tzn. przyjmujemy, że jest prawdziwa i określamy,
+z jakim prawdopodobieństwem mogliśmy uzyskać w próbie wynik co najmniej
+taki jak nasz przy tym założeniu. Jeżeli to prawdpodobieństwo jest małe,
+odrzucamy H0.
+</p>
+</small></li>
+</ul>
+</section>
+<section id="jak-to-tak-dużo-niewiadomych-co-teraz"
+class="slide level2">
+<h2>Jak to, tak dużo niewiadomych? Co teraz?!</h2>
+<ul>
+<li>REPLILKACJA, REPLIKACJA, REPLIKACJA…</li>
+<li>…i metaanaliza</li>
+<li>Analiza wielkości efektu i mocy testu</li>
+<li>Wykresy, analiza rozkładu zmiennych</li>
+<li>Przedziały ufności</li>
+</ul>
+</section></section>
+<section>
+<section id="moc-testu-i-błąd-ii-rodzaju"
+class="title-slide slide level1">
+<h1>Moc testu i błąd II rodzaju</h1>
+
+</section>
+<section id="nasz-wynik-okazał-się-nieistotny" class="slide level2">
+<h2>Nasz wynik okazał się nieistotny…</h2>
+<ul>
+<li>…ale to NIE oznacza, że <span class="math inline">\(H_0\)</span>
+jest prawdziwa.</li>
+</ul>
+</section>
+<section id="co-to-jest-moc-testu" class="slide level2">
+<h2>Co to jest moc testu?</h2>
+<ul>
+<li>Prawdopodobieństwo uzyskania statystycznie istotnego wyniku, gdy
+hipoteza aletrnatywna jest prawdziwa.</li>
+<li>Innymi słowy prawdopodobieństwo odrzucenia <span
+class="math inline">\(H_0\)</span>, gdy <span
+class="math inline">\(H_1\)</span> jest prawdziwa.</li>
+</ul>
+</section>
+<section id="kiedy-moc-testu-jest-większa" class="slide level2">
+<h2>Kiedy moc testu jest większa?</h2>
+<ul>
+<li>Im większy jest badany efekt (np. większa różnica między grupami,
+większa korelacja)</li>
+<li>Im więcej osób badamy</li>
+</ul>
+</section>
+<section id="jak-moc-testu-ma-się-do-błędu-ii-rodzaju"
+class="slide level2">
+<h2>Jak moc testu ma się do błędu II rodzaju?</h2>
+<ul>
+<li>Im większa moc testu, tym <em>większe</em> prawdopodobieństwo
+<em>odrzucenia</em> <span class="math inline">\(H_0\)</span>, gdy <span
+class="math inline">\(H_1\)</span> jest <em>prawdziwa</em>.<br />
+</li>
+<li>Tym samym, im większa moc testu, tym <em>mniejsze</em>
+prawdopodobieństwo popełnienia błędu II rodzaju.</li>
+</ul>
+</section>
+<section id="notacja-matematyczna" class="slide level2">
+<h2>Notacja matematyczna</h2>
+<p>moc testu <span class="math inline">\(= 1 - \beta\)</span></p>
+<p><span class="math inline">\(\beta\)</span> - prawdopodobieństwo
+popełnienia błędu II rodzaju</p>
+</section>
+<section id="kiedy-określamy-moc-testu" class="slide level2">
+<h2>Kiedy określamy moc testu?</h2>
+<ul>
+<li>Jak zwykle najlepiej <em>przed przeprowadzeniem badania</em> :)
+<ul>
+<li>Na podstawie literatury i/lub badania pilotażowego staramy się
+określić wielkość efektu, tzn. np. to jak duża może być różnica między
+grupami, jak silna korelacja.</li>
+<li>Określamy, jaka moc testu będzie dla nas satysfakcjonująca, często
+przyjmowana wartość to 0,8.</li>
+<li>Na tej podstawie szacujemy, ile osób musimy zbadać.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="co-to-ma-wspólnego-z-liczebnością-próby"
+class="title-slide slide level1">
+<h1>Co to ma wspólnego z liczebnością próby?</h1>
+
+</section>
+<section id="istotność-statystyczna-i-moc-testu-a-wielkość-próby"
+class="slide level2">
+<h2>Istotność statystyczna i moc testu a wielkość próby</h2>
+<ul>
+<li>Im większa liczebność próby, tym większa moc testu i tym mniejsze
+wartości p jakie uzyskamy dla określonego wyniku.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Im większa liczebność próby, tym mniejsze prawdopodobieństwo, że
+nasze badanie “nie da rady” wykryć jakiejś zależności, która ma miejsce
+w populacji…</li>
+<li>…ale jednocześnie tym większe prawdopodobieństwo, że gdy tak
+naprawdę nie ma w populacji interesującej nas zależności, a uzyskamy
+bardzo niewielką różnicę, to uznamy ją za istotną statystycznie i
+odrzucimy <span class="math inline">\(H_0\)</span>, gdy nie powinniśmy
+tego zrobić.</li>
+</ul>
+</section>
+<section id="co-warto-robić" class="slide level2">
+<h2>Co warto robić?</h2>
+<ol type="1">
+<li>Przed rozpoczęciem badania określić, jak duży efekt będzie dla nas
+interesujący poznawczo lub jakiego się spodziewamy w oparciu o
+literaturę/pilotaż.</li>
+<li>Ustalić, jaka moc testu będzie dla nas satysfakcjonująca.</li>
+<li>Na tej podstawie określić wielkość próby.</li>
+<li>Interpretować uzyskane wyniki w kontekście tych ustaleń.</li>
+</ol>
+</section>
+<section id="alternatywnie" class="slide level2">
+<h2>Alternatywnie…</h2>
+<ul>
+<li>Warto pamiętać o tych ograniczeniach i:
+<ul>
+<li>replikować</li>
+<li>analizować uzyskaną wielkość efektu</li>
+<li>analizować rozkłady zmiennych i przedziały ufności</li>
+<li>tworzyć/czytać metaanalizy</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="podsumowanie" class="title-slide slide level1">
+<h1>Podsumowanie</h1>
+
+</section>
+<section id="podsumowanie-1" class="slide level2">
+<h2>Podsumowanie</h2>
+<ul>
+<li>By określić, czy uzyskany na naszej próbie wynik można odnieść do
+populacji, testujemy hipotezę zerową.</li>
+<li>Hipoteza zerowa stanowi zaprzeczenie hipotezy, którą przjęliśmy w
+naszym badaniu, tak zwanej hipotezy alternatywnej.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Testując hipotezę zerową możemy popełnić błąd I i II rodzaju.</li>
+<li>Błąd I rodzaju polega na odrzuceniu hipotezy zerowej, gdy jest ona
+prawdziwa.</li>
+<li>Błąd II rodzaju polega na przyjęciu hipotezy zerowej, gdy jest ona
+fałszywa.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Testując hipotezę zerową określamy, z jak dużym prawdopodobieństwem
+mógłby pojawić się nasz wynik, gdyby była ona prawdziwa.</li>
+<li>Maksymalny dopuszczalny poziom takiego prawdopodobieństwa określamy
+mianem poziomu statystycznej istotności.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>To, jak duże jest prawdopodobieństwo, że odrzucimy hipotezę zerową,
+gdy prawdziwa jest hipoteza alternatywna określa się mianem mocy
+testu.</li>
+<li>Zarówno zagadnienie statystycznej istotności, jak i mocy testu jest
+związane z liczebnością próby.</li>
+<li>Powinniśmy być świadomi ograniczeń podejścia polegającego na
+testowaniu hipotez zerowych.</li>
+<li>Świadomi tych ograniczeń, powinniśmy kłaść duży nacisk na
+REPLIKACJĘ</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/search/search.js"></script>
+  <script src="reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Małgorzata Basińska">
+  <title>Próba i populacja - w jaki sposób możliwe jest wyciąganie wniosków na temat populacji na podstawie próby i jakie ma ograniczenia?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="_styles.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Próba i populacja - w jaki sposób możliwe jest
+wyciąganie wniosków na temat populacji na podstawie próby i jakie ma
+ograniczenia?</h1>
+  <p class="author">Małgorzata Basińska</p>
+</section>
+
+<section>
+<section id="fajowe-narzędzie" class="title-slide slide level1">
+<h1>Fajowe narzędzie</h1>
+
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><a
+href="https://seeing-theory.brown.edu">https://seeing-theory.brown.edu</a></p>
+</section></section>
+<section>
+<section id="próba-i-populacja" class="title-slide slide level1">
+<h1>Próba i populacja</h1>
+
+</section>
+<section id="populacja" class="slide level2">
+<h2>Populacja</h2>
+<p>Ogół osób, do których odnosi się dana teoria psychologiczna (np.
+populacja wszystkich ludzi, populacja kobiet, populacja niemowląt).</p>
+</section>
+<section id="próba" class="slide level2">
+<h2>Próba</h2>
+<p>Podzbiór osób należących do populacji wybrany po to, by wyciągać
+wnioski na temat populacji.</p>
+</section>
+<section id="dlaczego-i-po-co-dobieramy-próbę" class="slide level2">
+<h2>Dlaczego (i po co) dobieramy próbę</h2>
+<ul>
+<li>Najczęściej nie możemy zbadać całej populacji ze względów
+praktycznych.</li>
+<li>Badamy tylko określoną cześć populacji - <em>próbę</em>.</li>
+<li>Robimy to po to, by oszacować, jak wygląda sytuacja w całej
+populacji - innymi słowy, dokonujemy <em>estymacji</em>.</li>
+</ul>
+</section>
+<section id="estymator" class="slide level2">
+<h2>Estymator</h2>
+<p>Statystyka służąca do szacowania wartości parametru w populacji.</p>
+<p><small>Definicja za <a
+href="https://pl.wikipedia.org/wiki/Estymator">Wikipedią, hasło
+“Estymator”</a></small></p>
+</section>
+<section id="przykład-estymacji-z-wykorzystaniem-punktowego-estymatora"
+class="slide level2">
+<h2>Przykład estymacji z wykorzystaniem punktowego estymatora</h2>
+<p><a
+href="https://seeing-theory.brown.edu/frequentist-inference/index.html#section1">Szacujemy,
+ile wynosi <span class="math inline"><em>π</em></span></a></p>
+</section>
+<section id="a-jak-to-wygląda-gdy-badamy-ludzi" class="slide level2">
+<h2>A jak to wygląda, gdy badamy ludzi?</h2>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><span
+class="math display"><em>w</em><em>a</em><em>r</em><em>t</em><em>o</em><em>ś</em><em>ć</em><em>p</em><em>a</em><em>r</em><em>a</em><em>m</em><em>e</em><em>t</em><em>r</em><em>u</em><em>w</em><em>p</em><em>o</em><em>p</em><em>u</em><em>l</em><em>a</em><em>c</em><em>j</em><em>i</em> = <em>p</em><em>r</em><em>a</em><em>w</em><em>d</em><em>a</em><em>m</em><em>a</em><em>t</em><em>e</em><em>r</em><em>i</em><em>a</em><em>l</em><em>n</em><em>a</em>(<em>c</em><em>z</em><em>y</em><em>l</em><em>i</em>:<em>t</em><em>a</em><em>k</em><em>w</em><em>ł</em><em>a</em><em>ś</em><em>n</em><em>i</em><em>e</em><em>j</em><em>e</em><em>s</em><em>t</em>)</span></p>
+</section>
+<section id="procedura-estymacji" class="slide level2">
+<h2>Procedura estymacji</h2>
+<ol type="1">
+<li>Załóżmy, że badamy jakąś cechę, która ma w populacji pewien rozkład,
+np. wzrost.*</li>
+<li>Chcemy odkryć, jaki jest średni wzrost w populacji czteroletnich
+chłopców.</li>
+<li>W tym celu losujemy 100 chłopców.</li>
+<li>Wyciągamy średnią z naszych pomiarów.</li>
+</ol>
+<p><small>*W przypadku zmiennych, które mierzymy testami
+psychologicznymi sprawa jest nieco bardziej skomplikowana, bo badamy
+zmienne, których nie obserwujemy bezpośrednio, a za pośrednictwem ich
+przejawów.</small></p>
+</section>
+<section id="symulacja" class="slide level2">
+<h2>Symulacja!</h2>
+<p><img data-src="img/height_distr_10s.png" /></p>
+</section>
+<section id="m-105.6" class="slide level2">
+<h2>m = 105.6</h2>
+<pre><code>[1] 105.1854
+[1] 106.7389
+[1] 105.2505
+[1] 105.0579
+[1] 106.143
+[1] 106.1928
+[1] 104.7826
+[1] 105.6278
+[1] 106.1298
+[1] 104.8144</code></pre>
+</section>
+<section id="jak-powinniśmy-dobierać-próbę" class="slide level2">
+<h2>Jak powinniśmy dobierać próbę</h2>
+<ul>
+<li>Losowo!</li>
+<li>Estymator powinien być <em>NIEOBCIĄŻONY</em> i <em>STAŁY</em>.</li>
+</ul>
+</section>
+<section id="estymator-obciążony" class="slide level2">
+<h2>Estymator obciążony</h2>
+<p><img data-src="img/biased_estimator.png" /></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><img data-src="img/height_distr_10s_biased.png" /></p>
+</section>
+<section id="m-105.6-1" class="slide level2">
+<h2>m = 105.6</h2>
+<pre><code>[1] 105.9997
+[1] 107.1536
+[1] 107.0053
+[1] 106.4052
+[1] 108.0459
+[1] 107.5541
+[1] 106.547
+[1] 106.8938
+[1] 106.7455
+[1] 105.4865</code></pre>
+</section>
+<section id="estymator-niestały" class="slide level2">
+<h2>Estymator niestały</h2>
+<p><img data-src="img/height_distr_10s_variable.png" /></p>
+<p><small>czerwona linia: N = 2, zielona linia: N = 100, czarna linia:
+rzeczywista średnia</small></p>
+</section></section>
+<section>
+<section id="wielkość-próby-a-dokładność-szacowania"
+class="title-slide slide level1">
+<h1>Wielkość próby a dokładność szacowania</h1>
+
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p><a
+href="https://seeing-theory.brown.edu/frequentist-inference/index.html#section2">Seeing
+theory, Frequentist inference</a></p>
+</section>
+<section id="wnioski-z-symulacji" class="slide level2">
+<h2>Wnioski z symulacji</h2>
+<ul>
+<li>im mniejsza próba, tym szerszy przedział ufności</li>
+<li>im wyższy poziom ufności, tym szerszy przedział ufności</li>
+</ul>
+</section></section>
+<section>
+<section id="metody-doboru-próby" class="title-slide slide level1">
+<h1>Metody doboru próby</h1>
+
+</section>
+<section id="metody-probabilistyczne" class="slide level2">
+<h2>Metody probabilistyczne</h2>
+<ul>
+<li>Zakłada, że dysponujemy jakimś <em>operatem losowania</em> dla
+badanej populacji i z niego <strong>losowo</strong> wyłaniamy osoby
+badane
+<ul>
+<li>Dobór prosty losowy (<em>simple random sampling</em>)</li>
+<li>Dobór warstwowy (<em>stratified sampling</em>)</li>
+<li>Dobór systematyczny (<em>systematic sampling</em>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="metody-nieprobabilistyczne" class="slide level2">
+<h2>Metody nieprobabilistyczne</h2>
+<ul>
+<li>Dobór przypadkowy (<em>convenience sampling</em>)</li>
+<li>Dobór kwotowy (<em>quota sampling</em>)</li>
+<li>Kula śniegowa (<em>snowball sampling</em>)</li>
+</ul>
+</section>
+<section id="dobór-prosty-losowy" class="slide level2">
+<h2>Dobór prosty, losowy</h2>
+<ul>
+<li>Każda osoba z populacji ma równą szansę dostania się do próby</li>
+<li>Potrzebny <strong>operat losowania</strong></li>
+</ul>
+</section>
+<section id="dobór-prosty-losowy-1" class="slide level2">
+<h2>Dobór prosty, losowy</h2>
+<p><img data-src="img/w02_simple_random.png" /></p>
+<p><small>Obrazek pochodzi z artykułu Seemy Singh pt. <a
+href="https://towardsdatascience.com/sampling-techniques-a4e34111d808">Sampling
+Techniques</a></small></p>
+</section>
+<section id="dobór-warstwowy" class="slide level2">
+<h2>Dobór warstwowy</h2>
+<ul>
+<li>Dobór pod względem jakiejś ważnej charakterystyki</li>
+<li>Najpierw trzeba wyłonić ważne charakterystyki, co bywa trudne</li>
+<li>W obrębie warstw stosujemy dobór prosty losowy</li>
+</ul>
+</section>
+<section id="dobór-warstwowy-1" class="slide level2">
+<h2>Dobór warstwowy</h2>
+<p><img data-src="img/w02_stratified.png" /></p>
+<p><small>Obrazek pochodzi z artykułu Seemy Singh pt. <a
+href="https://towardsdatascience.com/sampling-techniques-a4e34111d808">Sampling
+Techniques</a></small></p>
+</section>
+<section id="dobór-systematyczny" class="slide level2">
+<h2>Dobór systematyczny</h2>
+<ul>
+<li>Jeśli dysponujemy populacją uszeregowaną, możemy wybrać co n-tą
+osobę z szeregu</li>
+<li>Często w badaniach medycznych (np. <em>co trzecia osoba rejestrująca
+się do onkologa w WCO</em>)</li>
+<li>Metoda dobra jeśli tylko lista nie zawiera w sobie ukrytego
+porządku</li>
+</ul>
+</section>
+<section id="dobór-systematyczny-1" class="slide level2">
+<h2>Dobór systematyczny</h2>
+<figure>
+<img data-src="img/w02_systematic.png" alt="Dobór systematyczny" />
+<figcaption aria-hidden="true">Dobór systematyczny</figcaption>
+</figure>
+<p><small>Obrazek pochodzi z artykułu Seemy Singh pt. <a
+href="https://towardsdatascience.com/sampling-techniques-a4e34111d808">Sampling
+Techniques</a></small></p>
+</section>
+<section id="dobór-przypadkowy" class="slide level2">
+<h2>Dobór przypadkowy</h2>
+<ul>
+<li>Kto się nawinie</li>
+<li>Najczęstszy przypadek w badaniach psychologicznych</li>
+<li>Może nie stanowić problemu, może stanowić ogromny problem</li>
+</ul>
+</section>
+<section id="dobór-kwotowy" class="slide level2">
+<h2>Dobór kwotowy</h2>
+<ul>
+<li>Zakładamy liczebności osób o zadanych cechach obecne w
+populacji</li>
+<li>Rekrutujemy badanych aż osiągniemy te liczebności</li>
+</ul>
+</section>
+<section id="kula-śniegowa" class="slide level2">
+<h2>Kula śniegowa</h2>
+<ul>
+<li>Rekrutujemy badanego, po czym każemy mu przyprowadzić ludzi
+podobnych do niego</li>
+<li>Zupełnie niepoprawne metodologicznie, ale czasem jest to jedyna
+opcja, jeśli badamy bardzo specyficzne populacje/bardzo rzadkie
+cechy</li>
+</ul>
+</section>
+<section id="kula-śniegowa-1" class="slide level2">
+<h2>Kula śniegowa</h2>
+<p><img data-src="img/w02_snowball.png" /></p>
+<p><small>Obrazek pochodzi z artykułu Seemy Singh pt. <a
+href="https://towardsdatascience.com/sampling-techniques-a4e34111d808">Sampling
+Techniques</a></small></p>
+</section>
+<section class="slide level2">
+
+<p>ISTNIEJE JESZCZE WIELE INNYCH METOD DOBORU PRÓBY</p>
+</section>
+<section
+id="skąd-wiemy-że-zależność-wykryta-w-próbie-jest-obecna-w-populacji"
+class="slide level2">
+<h2>Skąd wiemy, że zależność wykryta w próbie jest obecna w
+populacji?</h2>
+<ul>
+<li>Nawet jeśli mamy najlepszy, najbardziej reprezentatywny dobór
+próby…</li>
+<li>…nie wiemy (nie możemy być pewni).</li>
+<li>Możemy przypuszczać z określonym <em>prawdopodobieństwem</em>, że
+obserwowana przez nas zależność mogłaby wystąpić, gdyby zależność nie
+istniała i zależy nam na tym, by pokazać, że to prawdopodobieństwo jest
+znikomo małe.</li>
+<li>Do określenia tego prawdopodobieństwa potrzebujemy testów
+statystycznych.</li>
+<li>Wszystkie te testy zakładają, że próba została dobrana losowo, a
+zatem jest nieobciążona.</li>
+</ul>
+</section></section>
+<section>
+<section id="obciążenie-w-doborze-próby"
+class="title-slide slide level1">
+<h1>Obciążenie w doborze próby</h1>
+
+</section>
+<section id="definicja-obciązenia-próby-sampling-bias"
+class="slide level2">
+<h2>Definicja obciązenia próby (sampling bias)</h2>
+<ul>
+<li>Z obciążeniem w doborze próby mamy do czynienia, jeżeli jacyś
+członkowie naszej docelowej populacji mają mniejszą/większą szansę na
+udział w badaniu.</li>
+<li>W efekcie dobór nie jest losowy, ponieważ warunek tego, by dla
+każdej osoby z populacji prawdopodobieństwo znalezienia się w próbie
+było takie samo, nie jest spełniony.</li>
+</ul>
+</section>
+<section id="katalog" class="slide level2">
+<h2>Katalog</h2>
+<p><a href="https://catalogofbias.org">https://catalogofbias.org</a></p>
+</section>
+<section id="paradoks-berksona-berksons-paradox" class="slide level2">
+<h2>Paradoks Berksona (Berkson’s paradox)</h2>
+<ul>
+<li>W momencie, w którym udział w badaniu zależny jest od wystąpienia
+<em>przynajmniej jednej</em> z badanych zmiennych, możemy zaobserwować
+negatywny związek między badanymi zmiennymi (i np. niesłusznie wyciągnąć
+wniosek, że wystąpienie jednej choroby chroni przed wystąpieniem
+drugiej).</li>
+<li>Związek między dwoma zmiennymi obserwujemy ze względu na
+chcarakterystykę próby.</li>
+</ul>
+</section>
+<section id="oryginalny-przykład-paradoksu-berksona"
+class="slide level2">
+<h2>Oryginalny przykład paradoksu Berksona</h2>
+<ul>
+<li>Cukrzyca a zapalenie woreczka żółciowego wśród hospitalizowanych
+pacjentów. Nawet jeżeli nie ma żadnej zależności w ogólnej populacji,
+może stać się tak, że w badaniu pacjentów, którzy trafiają do szpitala
+zaobserwujemy, że cukrzyca chroni przez zapaleniem woreczka
+żółciowego.</li>
+<li>Osoby które nie mają ani cukrzycy, ani zapalenia woreczka żółciowego
+mają mniejszą szansę, by trafić do szpitala.</li>
+<li>Ergo, w grupie bez cukrzycy brakuje nam pacjentów bez zapalenia
+woreczka… w grupie z cukrzycą ich nie brakuje, więc może okazać się
+nawet, że cukrzyca chroni przed zapaleniem woreczka żółciowego.</li>
+</ul>
+</section>
+<section id="self-selection-bias" class="slide level2">
+<h2>Self selection bias</h2>
+<ul>
+<li>Błąd, z którym mamy do czynienia, kiedy osoby zmotywowane do udziału
+w badaniu / zgadzające się na udział różnią się istotnie od
+interesującej nas populacji w sposób, który może wpłynąć na wyniki
+badania.</li>
+<li>Przykład: badamy związek stereotypów dotyczących ról płciowych z
+jakąkolwiek zmienną zależną. Jest wysoce prawdopodobne, że w przypadku,
+w którym w badaniu będą brać udział ochotnicy, w naszej próbie znajdą
+się osoby o skrajnych poglądach na ten temat, co może prowadzić do
+zniekształcenia wyników.</li>
+</ul>
+</section>
+<section id="dobór-badanych-z-jakiejś-konkretnej-lokalizacji"
+class="slide level2">
+<h2>Dobór badanych z jakiejś konkretnej lokalizacji</h2>
+<ul>
+<li>Błąd wynikający z tego, że z zasady osoby w jakiejś konkretnej
+lokalizacji (cała klasa, cała szkoła, przechodnie w jakimś konkretnym
+miejscu) mogą różnić się od interesującej nas populacji.</li>
+</ul>
+</section>
+<section id="healthy-participant-bias" class="slide level2">
+<h2>Healthy participant bias</h2>
+<ul>
+<li>Ma szczególne znaczenie w badaniach związanych ze zdrowiem i
+badaniach epidemiologicznych.</li>
+<li>Osoby, które decydują się na udział w badaniu zwykle są nieco
+zdrowsze od tych, które na udział się nie decydują.</li>
+<li>Jak myślicie, jak ma się to do badań longitudinalnych i wykruszania
+się osób badanych z kolejnych fal badania?</li>
+</ul>
+</section>
+<section id="exclusion-bias" class="slide level2">
+<h2>Exclusion bias</h2>
+<ul>
+<li>Ma miejsce, kiedy jakaś grupa potencjalnych uczestników badania w
+ogóle nie ma szansy wziąć udziału w badaniu…</li>
+<li>…bo np. nie korzysta z Internetu.</li>
+</ul>
+</section>
+<section id="najważniejsze-pytanie" class="slide level2">
+<h2>Najważniejsze pytanie</h2>
+<p>CZY NASZA PRÓBA NIE RÓŻNI SIĘ PRZYPADKIEM OD INTERESUJĄCEJ NAS
+POPULACJI? CZY MOŻEMY UOGÓLNIAĆ NASZ WYNIK?</p>
+</section></section>
+<section>
+<section id="podsumowanie" class="title-slide slide level1">
+<h1>Podsumowanie</h1>
+
+</section>
+<section
+id="praktyczne-pytania-które-odbiorca-badania-powinien-sobie-zadać"
+class="slide level2">
+<h2>Praktyczne pytania, które odbiorca badania powinien sobie zadać</h2>
+<ul>
+<li>Czy dobór próby w badaniu miał charakter probablilistyczny czy
+autorzy zbadali jakąś próbę, którą akurat “mieli pod ręką”?</li>
+<li>Czy zbadane osoby mogą się różnić od interesującej nas populacji?
+Pod względem jakich zmiennych?</li>
+<li>Czy w/w zmienne mogą mieć wpływ na wyniki badania?</li>
+<li>Czy autorzy starali się w jakikolwiek sposób kotrolować zmienne,
+które mogły zakłócić wyniki badania?</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/search/search.js"></script>
+  <script src="reveal.js/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
