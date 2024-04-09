@@ -12,15 +12,19 @@ Widzimy się na laboratoriach we wtorki w godzinach:
 
 ### Wykłady
 
-Wykład | slajdy
+Wykład | slajdy | podręcznik
 ------ | --------
-1 - Etyka, cz.1 | [slajdy](01.html)
+1 - Etyka, cz.1 | [slajdy](01.html) | 59-83
 2 - _Kolokwium 2_ |
-3 - Etyka, cz.2 | [slajdy](01.html)
-4 - Trafność | [slajdy](02.html)
-5 - Rzetelność | [slajdy](03.html)
+3 - Etyka, cz.2 | [slajdy](01.html) | 59-83
+4 - Trafność | [slajdy](02.html) |
+5 - Rzetelność | [slajdy](03.html) |
+6 - Obserwacja | [slajdy](04.html) | 101-113
+7 - Sondaże | [slajdy](05.html) | 160-162
+8 - Porównania międzygrupowe | [slajdy](06.html) |
 
-<!-- 05 - Obserwacja | [slajdy](l05.html)
+
+<!-- 
 06 - Porównania międzygrupowe i sondaże | [slajdy](l06.html)
 07 - Schematy korelacyjne | [slajdy](l07.html)
 08 - Modele wielozmiennowe | [slajdy](l08.html)
