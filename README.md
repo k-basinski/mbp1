@@ -17,11 +17,14 @@ Wykład | slajdy | podręcznik
 1 - Etyka, cz.1 | [slajdy](01.html) | 59-83
 2 - _Kolokwium 2_ |
 3 - Etyka, cz.2 | [slajdy](01.html) | 59-83
-4 - Trafność | [slajdy](02.html) |
-5 - Rzetelność | [slajdy](03.html) |
+4 - Trafność | [slajdy](02.html) | 156-159
+5 - Rzetelność | [slajdy](03.html) | 156-159
 6 - Obserwacja | [slajdy](04.html) | 101-113
 7 - Sondaże | [slajdy](05.html) | 160-162
-8 - Porównania międzygrupowe | [slajdy](06.html) |
+8 - Porównania międzygrupowe | [slajdy](06.html) | 
+9 - _Kolokwium 3_ |
+10 - Schematy korelacyjne | [slajdy](07.html) | 
+11 - Modele wielozmiennowe | [slajdy](08.html) | 
 
 
 <!-- 
