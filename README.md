@@ -24,16 +24,18 @@ Wykład | slajdy | podręcznik
 8 - Porównania międzygrupowe | [slajdy](06.html) | 
 9 - _Kolokwium 3_ |
 10 - Schematy korelacyjne | [slajdy](07.html) | 
-11 - Modele wielozmiennowe | [slajdy](08.html) | 
+11 - Modele wielozmiennowe, cz.1 | [slajdy](08.html) | 
+12 - Modele wielozmiennowe, cz.2 | [slajdy](08.html) | 
+13 - Badania podłużne | [slajdy](09.html)
+14 - Systematyczne przeglądy i metaanalizy | [slajdy](10.html) 
+15 - Podsumowanie | [slajdy](11.html) 
 
 
 <!-- 
 06 - Porównania międzygrupowe i sondaże | [slajdy](l06.html)
 07 - Schematy korelacyjne | [slajdy](l07.html)
-08 - Modele wielozmiennowe | [slajdy](l08.html)
-09 - Badania podłużne | [slajdy](l09.html)
-10 - Systematyczne przeglądy i metaanalizy | [slajdy](l09.html) -->
 
+-->
 
 ## Laboratoria
 
