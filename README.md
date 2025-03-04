@@ -2,14 +2,13 @@
 
 ## Semestr letni
 
-Egzamin z Metodologii Badań Psychologicznych odbędzie się w środę, 19.06.2024 o godzinie 11:00 w sali CBM_B.
 
-Widzimy się na wykładach we wtorki w godz. 13.15 - 14.45 w CBM, Audytorium B.
+Widzimy się na wykładach we wtorki w godz. 13.15 - 14.45 w CBM, Audytorium C.
 
 Widzimy się na laboratoriach we wtorki w godzinach:
-    - 8.00 - 9.30 gr. 3
-    - 9.45 - 11.15 gr. 1
-    - 11.30 - 13.00 gr. 2
+    - 8.00 - 9.30 
+    - 9.45 - 11.15 
+    - 11.30 - 13.00 
 
 
 ### Wykłady
