@@ -19,11 +19,11 @@ Wykład | slajdy | podręcznik
 1 - _Kolokwium 2_ |
 2 - Etyka | [slajdy](01.html) | 59-83
 3 - Trafność | [slajdy](02.html) | 156-159
+4 - Rzetelność | [slajdy](03.html) | 156-159
 
 
 <!-- 
 
-5 - Rzetelność | [slajdy](03.html) | 156-159
 6 - Obserwacja | [slajdy](04.html) | 101-113
 7 - Sondaże | [slajdy](05.html) | 160-162
 8 - Porównania międzygrupowe | [slajdy](06.html) | 
