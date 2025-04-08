@@ -22,13 +22,13 @@ Wykład | slajdy | podręcznik
 4 - Rzetelność | [slajdy](03.html) | 156-159
 5 - Obserwacja | [slajdy](04.html) | 101-113
 6 - Sondaże | [slajdy](05.html) | 160-162
+7 - Porównania międzygrupowe | [slajdy](06.html) | 
+8 - Schematy korelacyjne | [slajdy](07.html) | 
 
 
 <!-- 
 
-8 - Porównania międzygrupowe | [slajdy](06.html) | 
 9 - _Kolokwium 3_ |
-10 - Schematy korelacyjne | [slajdy](07.html) | 
 11 - Modele wielozmiennowe, cz.1 | [slajdy](08.html) | 
 12 - Modele wielozmiennowe, cz.2 | [slajdy](08.html) | 
 13 - Badania podłużne | [slajdy](09.html)
