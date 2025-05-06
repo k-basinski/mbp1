@@ -24,15 +24,15 @@ Wykład | slajdy | podręcznik
 6 - Sondaże | [slajdy](05.html) | 160-162
 7 - Porównania międzygrupowe | [slajdy](06.html) | 
 8 - Schematy korelacyjne | [slajdy](07.html) | 
+9 - Modele wielozmiennowe | [slajdy](08.html) | 
+10 - Badania podłużne | [slajdy](09.html)
+11 - Systematyczne przeglądy i metaanalizy | [slajdy](10.html) 
 
 
 <!-- 
 
 9 - _Kolokwium 3_ |
-11 - Modele wielozmiennowe, cz.1 | [slajdy](08.html) | 
 12 - Modele wielozmiennowe, cz.2 | [slajdy](08.html) | 
-13 - Badania podłużne | [slajdy](09.html)
-14 - Systematyczne przeglądy i metaanalizy | [slajdy](10.html) 
 15 - Podsumowanie | [slajdy](11.html) 
 
 -->
