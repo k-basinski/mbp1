@@ -2,7 +2,7 @@
 
 ## Semestr letni
 
-Kolokwium z Metodologii odbędzie się 7/04/2025 o godzinie 14.00 w CBM C.
+Egzamin z Metodologii odbędzie się 16 czerwca (poniedziałek) 12:00-14:00, sala wykładowa numer 26 w budynku 15. (B15_3.26).
 
 Widzimy się na wykładach we wtorki w godz. 13.15 - 14.45 w CBM, Audytorium C.
 
