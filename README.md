@@ -13,9 +13,9 @@ Wykład | slajdy | podręcznik
 1 - Etyka | [slajdy](01.html) | 59-83
 2 - Trafność | [slajdy](02.html) | 156-159
 3 - Rzetelność | [slajdy](03.html) | 156-159
+4 - Obserwacja | [slajdy](04.html) | 101-113
 
 <!-- 
-5 - Obserwacja | [slajdy](04.html) | 101-113
 6 - Sondaże | [slajdy](05.html) | 160-162
 7 - Porównania międzygrupowe | [slajdy](06.html) | 
 8 - Schematy korelacyjne | [slajdy](07.html) | 
