@@ -4,6 +4,10 @@
 
 Widzimy się na wykładach online, wtorki godz. 10.30 - 12.00
 
+Dnia 28 kwietnia widzimy się na kolokwium o godzinie 9.00 w sali CBM C.
+
+Do poczytania przed kolokwium (oprócz podręcznika!): <https://open.umn.edu/opentextbooks/textbooks/75>
+
 
 
 ### Wykłady
