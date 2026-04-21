@@ -15,9 +15,9 @@ Wykład | slajdy | podręcznik
 3 - Rzetelność | [slajdy](03.html) | 156-159
 4 - Obserwacja | [slajdy](04.html) | 101-113
 5 - Sondaże | [slajdy](05.html) | 160-162
+6 - Porównania międzygrupowe | [slajdy](06.html) | 
 
 <!-- 
-7 - Porównania międzygrupowe | [slajdy](06.html) | 
 8 - Schematy korelacyjne | [slajdy](07.html) | 
 9 - Modele wielozmiennowe | [slajdy](08.html) | 
 10 - Badania podłużne | [slajdy](09.html)
